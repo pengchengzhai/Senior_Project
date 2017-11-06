@@ -1,0 +1,146 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="index.css">
+        <style>
+            ul{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+            li{
+                float: left;
+            }
+            li a{
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover{
+                background-color: #4CAF50;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+          <li><a id="myBtn"  href="#about">About Us</a></li>
+            <li><a href="#go_to_footer">Contact</a></li>
+        </ul>
+        <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #4baf50;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            color:white;
+            margin-top: 100px;
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        </style>
+
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Apartments Finder:<p>
+            <p>Apartment Finder is a Web Application that allow users who wants to search apartments in an area that are current available. Also, Apartment Finder provide the crime stats with every search to provide with statics about murder, assault, rape, robberies, burglaries and thefts in the database.</p> 
+
+            <p>The problem we want to solve was if someone was thinking about moving into a town or city that they have never been but wanted to know if it was safe or not. While some of the other real estate websites do show if a neighborhood is safe or not, they do not tell the user what type of crimes are high in that area. If someone had a nice they probably do not want to move into an area with high auto thefts.</p>
+
+            <p>Our website allows the user to search a city or town. The displays a map with markers on the locations of each of the apartments. Next to the map is all of the crime statistics of the city that was searched. Under the map is a list of all of the apartment that are one click away from displaying all the information about the apartment. When an apartment is click it brings the user to a page that displays all of the information about the apartment like the description, number of bedrooms and bathrooms, price and images for the apartment. The user can click contact us and fill out a form that will email us the message.
+</p>
+          </div>
+
+        </div>
+
+        <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+        <header class="background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Find an appartment</h2>
+                        <form action="callResults.php" method="post">
+                        <div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                    <input type="text" id="zip" name="search" class="form-control input-lg" placeholder="Enter a City" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-info btn-lg" type="submit">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                            <script src="checkZip.js"></script>
+                                        </button>
+                                    </span>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    </body>
+
+</html>
